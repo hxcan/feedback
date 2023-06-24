@@ -1,5 +1,6 @@
 package com.stupidbeauty.feedback;
 
+import com.stupidbeauty.feedback.activity.FeedbackActivity;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
@@ -73,25 +74,19 @@ public class Feedback
   private Context context; //!< Context.
 
   /**
-  * Set package name url map data listener.
+  * Show feedback ui.
   */
-  public void setPackageNameUrlMapDataListener(PackageNameUrlMapDataListener listener)
+  public void showFeedbackUi()
   {
-    packageNameUrlMapDataListener = listener;
-  } // public void setPackageNameUrlMapDataListener(PackageNameUrlMapDataListener listener)
+    // Chen xin.
+    
+    Log.d(TAG, "gotoLoginActivity, 119."); //Debug.
+    Intent launchIntent=new Intent(context, FeedbackActivity.class); // 启动意图。
 
-  /**
-  * 设置包名与信息页面地址之间的映射。
-  */
-  public void setPackageNameInformationUrlMap(HashMap<String, String> packageNameInformationUrlMap) 
-  {
-    this.packageNameInformationUrlMap=packageNameInformationUrlMap;
-      
-      if (packageNameUrlMapDataListener!=null) // Listenre exists.
-      {
-        packageNameUrlMapDataListener.setPackageNameInformationUrlMap(packageNameInformationUrlMap);
-      } // if (packageNameUrlMapDataListener!=null) // Listenre exists.
-	} // public void setPackageNameInformationUrlMap(HashMap<String, String> packageNameInformationUrlMap)
+    context.startActivity(launchIntent); //启动活动。
+
+    Log.d(TAG, "gotoLoginActivity, 122."); //Debug.
+  } // public void setPackageNameUrlMapDataListener(PackageNameUrlMapDataListener listener)
 
   /**
   * SEt the map of package naem to icon url.
