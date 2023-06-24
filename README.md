@@ -1,4 +1,4 @@
-UpgradeManager: Check upgrade for Android application
+Feedback: Feedback ui for Android application
 ===
 
-[![](https://jitpack.io/v/hxcan/upgrademanager.svg)](https://jitpack.io/#hxcan/upgrademanager)
+[![](https://jitpack.io/v/hxcan/feedback.svg)](https://jitpack.io/#hxcan/feedback)
