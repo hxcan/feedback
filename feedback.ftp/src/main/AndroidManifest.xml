@@ -12,5 +12,7 @@
       android:grantUriPermissions="true" >
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/upgradeproviderpathr" />
     </provider>
+  <activity android:configChanges="locale|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|fontScale" android:name=".activity.FeedbackActivity" android:label="OptimizeRepair" android:screenOrientation="unspecified" android:launchMode="singleTop">
+  </activity>
   </application>
 </manifest>
