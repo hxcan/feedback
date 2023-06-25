@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v4.content.LocalBroadcastManager;
+// import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,23 +23,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.stericson.RootTools.RootTools;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.Constants;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.FeedbackRequestSendTask;
-import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.R;
+import com.stupidbeauty.feedback.R2;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.DiagnoseInformation;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LanImeBaseDef;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LogHelper;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.OrApplicationLog;
-import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.RepairFinishedActivity;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.ZipInterruptedException;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.ZipUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -49,7 +46,7 @@ import butterknife.OnClick;
  */
 public class FeedbackActivity extends Activity
 {
-  @Bind(R.id.emailtextFeedbackeditText) EditText emailtextFeedbackeditText; //!<电子邮件输入框。
+  @BindView(R2.id.emailtextFeedbackeditText) EditText emailtextFeedbackeditText; //!<电子邮件输入框。
 
     /**
      * 压缩处理文件夹下的文件，并删除存在的压缩文件
@@ -181,8 +178,8 @@ public class FeedbackActivity extends Activity
     private static final int UPDATE_ZIP_PROGRESS = 1; //!<更新ZIP压缩的进度值。
     private Thread mZipTask;
 
-    @Bind(R.id.sendFeedbackuirepairprogressBar) ProgressBar sendFeedbackuirepairprogressBar; //!<发送反馈信息过程的进度条。
-    @Bind(R.id.sendFeedbackprogressValuetextView1) Button sendFeedbackprogressValuetextView1; //!<发送反馈信息的按钮。
+    @BindView(R2.id.sendFeedbackuirepairprogressBar) ProgressBar sendFeedbackuirepairprogressBar; //!<发送反馈信息过程的进度条。
+    @BindView(R2.id.sendFeedbackprogressValuetextView1) Button sendFeedbackprogressValuetextView1; //!<发送反馈信息的按钮。
 
     /**
      * 切换到反馈界面。
@@ -206,11 +203,11 @@ public class FeedbackActivity extends Activity
 
         if (result) //成功。
         {
-            Toast.makeText(FeedbackActivity.this, R.string.feedbackSendSucceeded, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
+            Toast.makeText(FeedbackActivity.this, R2.string.feedbackSendSucceeded, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
         } //if (result) //成功。
         else //失败。
         {
-            Toast.makeText(FeedbackActivity.this, R.string.feedbackSendFailed, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
+            Toast.makeText(FeedbackActivity.this, R2.string.feedbackSendFailed, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
         } //else //失败。
 
         
@@ -219,30 +216,29 @@ public class FeedbackActivity extends Activity
 
 
 
-	private static OptimizeRepairSimpleActivity m_instance; //!<The single instance object.
-    @Bind(R.id.rootAccessGroupBox) RelativeLayout rootAccessGroupBox; //!<检测ROOT权限的分组框。
-    private static String OptimizeRepairGooglePlayUrl="https://play.google.com/store/apps/details?id=com.stupidbeauty.comgooglewidevinesoftwaredrmremover"; //!<优化修复应用程序的google play地址。
-    private  static String Email="caihuosheng@gmail.com"; //!<邮件地址。
-    private static String NewLine="\n"; //!<换行。
-    @Bind(R.id.uifacingProblemlabel) TextView uifacingProblemlabel; //!<妳正面临着这个问题。
+  @BindView(R2.id.rootAccessGroupBox) RelativeLayout rootAccessGroupBox; //!<检测ROOT权限的分组框。
+  private static String OptimizeRepairGooglePlayUrl="https://play.google.com/store/apps/details?id=com.stupidbeauty.comgooglewidevinesoftwaredrmremover"; //!<优化修复应用程序的google play地址。
+  private  static String Email="caihuosheng@gmail.com"; //!<邮件地址。
+  private static String NewLine="\n"; //!<换行。
+  @BindView(R2.id.uifacingProblemlabel) TextView uifacingProblemlabel; //!<妳正面临着这个问题。
 
-    private static final String TAG="OptimizeRepairSimpleAct"; //!<输出调试信息时使用的标记。
-
-
-    @Bind(R.id.uirepairProblemgroupBox_3) View uirepairProblemgroupBox_3; //!<修复分组框。
-    @Bind(R.id.textFeedbackeditText)
-    EditText textFeedbackeditText; //!<用户输入反馈文字的输入框。
+  private static final String TAG="OptimizeRepairSimpleAct"; //!<输出调试信息时使用的标记。
 
 
-    @Bind(R.id.virtualSimprogressBar1) TextView virtualSimprogressBar1; //!<ROOT权限状态文字标签。
-    @Bind(R.id.startVirtualSimButton1) TextView startVirtualSimButton1; //!<ROOT权限状态文字标签。
-
-    @Bind(R.id.tiptextView1) RelativeLayout tiptextView1; //!<探测分组框。
+  @BindView(R2.id.uirepairProblemgroupBox_3) View uirepairProblemgroupBox_3; //!<修复分组框。
+  @BindView(R2.id.textFeedbackeditText) EditText textFeedbackeditText; //!<用户输入反馈文字的输入框。
 
 
-    public void setGmateLogPrepareListener(OnGmateLogPrepareListener listener) {
-        mLogPrepareListener = listener;
-    }
+  @BindView(R2.id.virtualSimprogressBar1) TextView virtualSimprogressBar1; //!<ROOT权限状态文字标签。
+  @BindView(R2.id.startVirtualSimButton1) TextView startVirtualSimButton1; //!<ROOT权限状态文字标签。
+
+  @BindView(R2.id.tiptextView1) RelativeLayout tiptextView1; //!<探测分组框。
+
+
+  public void setGmateLogPrepareListener(OnGmateLogPrepareListener listener) 
+  {
+    mLogPrepareListener = listener;
+  }
 
 
 
@@ -254,32 +250,29 @@ public class FeedbackActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_feedback); //显示界面。
+    setContentView(R2.layout.activity_feedback); //显示界面。
 
-        ButterKnife.bind(this); //注入视图。
+    ButterKnife.bind(this); //注入视图。
 
-        registerBroadcastReceiver(); //注册广播事件监听器。
-
-        mHandler = new ZIPHandler(Looper.getMainLooper()); //创建ZIP压缩处理器。
+    mHandler = new ZIPHandler(Looper.getMainLooper()); //创建ZIP压缩处理器。
 
 
-        setGmateLogPrepareListener(new OnGmateLogPrepareListener() //设置事件监听器，日志准备完毕。
+    setGmateLogPrepareListener(new OnGmateLogPrepareListener() //设置事件监听器，日志准备完毕。
+    {
+      @Override
+      /**
+      * 日志准备完毕。
+      */
+      public void onGmateLogPrepareState(int state)
+      {
+        if (state == LOG_PREPARE_SUCCESS) //日志准备成功。
         {
-            @SuppressWarnings("static-access")
-            @Override
-            /**
-             * 日志准备完毕。
-             */
-            public void onGmateLogPrepareState(int state)
-            {
-                if (state == LOG_PREPARE_SUCCESS) //日志准备成功。
-                {
-                    // if is force stop synch/zip task,do not show the email
-                    // dialog
-                        sendLogs(); //发送日志。
-                } //if (state == logManager.LOG_PREPARE_SUCCESS) //日志准备成功。
-            } //public void onGmateLogPrepareState(int state)
-        }); //logManager.setGmateLogPrepareListener(new OnGmateLogPrepareListener() //设置事件监听器，日志准备完毕。
+          // if is force stop synch/zip task,do not show the email
+          // dialog
+          sendLogs(); //发送日志。
+        } //if (state == logManager.LOG_PREPARE_SUCCESS) //日志准备成功。
+      } //public void onGmateLogPrepareState(int state)
+    }); //logManager.setGmateLogPrepareListener(new OnGmateLogPrepareListener() //设置事件监听器，日志准备完毕。
 	} //protected void onCreate(Bundle savedInstanceState)
 
     /**
@@ -287,7 +280,7 @@ public class FeedbackActivity extends Activity
      *  */
     private void sendLogs()
     {
-        File file = new File(LanImeBaseDef.LOG_BASE_ZIP_DIR); //压缩之后的日志文件。
+        // File file = new File(LanImeBaseDef.LOG_BASE_ZIP_DIR); //压缩之后的日志文件。
 
         DiagnoseInformation diagnozeInformation=collectDiagnoseInformation(); //收集诊断信息。
 
@@ -295,14 +288,14 @@ public class FeedbackActivity extends Activity
 
         String emailAddress=emailtextFeedbackeditText.getText().toString(); //获取邮件地址。
 
-        androidSendHelpTranslateEmail(file,diagnozeInformation,feedbackFromUser,emailAddress); //发送反馈信息。
+        androidSendHelpTranslateEmail(diagnozeInformation,feedbackFromUser,emailAddress); //发送反馈信息。
     } //private void sendLogs()
 
     private void reportRootAccess(Boolean isAccessGiven)
     {
         if (isAccessGiven) //已经获取到Root权限。
         {
-            virtualSimprogressBar1.setText(getString( R.string.weVeGotRootAccess)); //已经获取到ROOT权限。
+            virtualSimprogressBar1.setText(getString( R2.string.weVeGotRootAccess)); //已经获取到ROOT权限。
 
             tiptextView1.setEnabled(true); //启用探测分组框。
 
@@ -313,7 +306,7 @@ public class FeedbackActivity extends Activity
         } //if (RootTools.isAccessGiven()) //已经获取到Root权限。
         else //未获取到ROOT权限。
         {
-            virtualSimprogressBar1.setText (R.string.weDontHaveRootAccess); //未能获取到ROOT权限。
+            virtualSimprogressBar1.setText (R2.string.weDontHaveRootAccess); //未能获取到ROOT权限。
 
             startVirtualSimButton1.setVisibility(View.INVISIBLE); //隐藏检查ROOT权限的进度条。
             tiptextView1.setVisibility(View.GONE); //隐藏检查ROOT权限的进度条。
@@ -323,18 +316,20 @@ public class FeedbackActivity extends Activity
 
     } //private void reportRootAccess()
 
-    @OnClick(R.id.sendFeedbackprogressValuetextView1)
+    @OnClick(R2.id.sendFeedbackprogressValuetextView1)
     /**
      * 发送反馈。
      */
     public void sendFeedback()
     {
-        sendFeedbackuirepairprogressBar.setVisibility(View.VISIBLE); //显示进度条。
-        sendFeedbackprogressValuetextView1.setVisibility(View.INVISIBLE); //隐藏按钮。
+      sendFeedbackuirepairprogressBar.setVisibility(View.VISIBLE); //显示进度条。
+      sendFeedbackprogressValuetextView1.setVisibility(View.INVISIBLE); //隐藏按钮。
 
-        //启动zip任务，对日志目录进行压缩。压缩完毕之后，再启动发送过程。
+      //启动zip任务，对日志目录进行压缩。压缩完毕之后，再启动发送过程。
 
-        startZipTask(); //启动zip任务。
+      // startZipTask(); //启动zip任务。
+      
+      sendLogs(); // 发送日志。
     } //public  void sendFeedback()
 
 
@@ -421,51 +416,6 @@ public class FeedbackActivity extends Activity
     } //private OrApplicationLog packageApplicationLog()
 
     /**
- * 检查是否拥有ROOT权限。
- */
-    private void checkRootAccess()
-    {
-
-        CommitOrderTask task = new CommitOrderTask(); // 创建任务。
-        task.execute(); // 执行任务。
-
-
-
-        return;
-} //void CellAutomator::checkRootAccess()
-
-    private class CommitOrderTask extends AsyncTask<String, Void, Boolean>
-    {
-        private static final String TAG="CommitOrderTask"; //!<输出调试信息时使用的标记。
-
-        @Override
-        protected Boolean doInBackground(String... params)
-        {
-
-
-            Boolean Result = false; // 结果。
-
-
-
-            Result= RootTools.isAccessGiven(); //是否拥有ＲＯＯＴ权限。
-
-
-
-
-            return Result; // 返回结果。
-        } //protected String doInBackground(String... params)
-
-        @Override
-        /**
-         * 处理完成之后，会在主线程中调用此函数。
-         */
-        protected void onPostExecute(Boolean result)
-        {
-            ParseJsonCommitOrder(result); // 分析JSON。
-        } // protected void onPostExecute(String result)
-    } //private class CommitOrderTask extends AsyncTask<String, Void, String>
-
-    /**
      * 分析JSON字符串。
      *
      * @param Jsn2Prs 要分析的字符串。
@@ -491,7 +441,7 @@ public class FeedbackActivity extends Activity
 
     if ( problemExists) //有一个文件存在。
     {
-        uifacingProblemlabel.setText(R.string.youAreFacingTheProblem); //妳正面临着此问题。
+        uifacingProblemlabel.setText(R2.string.youAreFacingTheProblem); //妳正面临着此问题。
 
 
 
@@ -499,7 +449,7 @@ public class FeedbackActivity extends Activity
     } //if (systemframeworkcomgooglewidevinesoftwaredrmjar.exists ()) //此文件存在。
     else //此文件不存在。
     {
-        uifacingProblemlabel.setText (R.string.congratulationsYouDontHaveThisProblem); //妳未面临此问题。
+        uifacingProblemlabel.setText (R2.string.congratulationsYouDontHaveThisProblem); //妳未面临此问题。
 
 
         uirepairProblemgroupBox_3.setEnabled (false); //禁用修复分组框。
@@ -516,52 +466,6 @@ public class FeedbackActivity extends Activity
 } //void CellAutomator::startDetectingProblem()
 
 
-
-
-    /**
-	 * 注册广播事件接收器。
-	 */
-	private void registerBroadcastReceiver() 
-	{
-		IntentFilter intentFilter = new IntentFilter(); //创建意图过滤器。
-		
-		intentFilter.addAction(Constants.NativeMessage.STATUS_TEXT_CHANGE); //status text change。
-        intentFilter.addAction(Constants.NativeMessage.SHARE_TEXT); //分享文字内容。
-
-        intentFilter.addAction(Constants.NativeMessage.HIDE_CHECK_ROOT_ACCESS_GROUP_BOX); //隐藏检测ROOT权限的分组框。
-
-
-
-        intentFilter.addAction(Constants.NativeMessage.SHOW_REPORT_FINISHED_DIALOG); //显示修复完毕的对话框。
-
-
-
-        intentFilter.addAction(Constants.NativeMessage.ANDROID_SEND_HELP_TRANSLATE_EMAIL); //显示修复完毕的对话框。
-
-		LocalBroadcastManager lclBrdcstMngr=LocalBroadcastManager.getInstance(this); //Get the broadcast manager instance.
-		lclBrdcstMngr.registerReceiver(mBroadcastReceiver, intentFilter); //注册接收器。
-		
-
-	} //private void registerBroadcastReceiver()
-
-    /**
-     * @brief 查询应用程序版本号。
-     */
-    public  String showRepairFinishedDialog()
-    {
-
-        System.out.println("showRepairFinishedDialog got invoked"); //Debug.
-
-        String result=""; //Result.
-
-
-        Intent repairFinishedDialogIntent=new Intent(this,RepairFinishedActivity.class);
-
-
-        startActivity(repairFinishedDialogIntent); //启动活动。
-
-        return result;
-    } //public static String queryVersion()
 
 
     /**
@@ -587,15 +491,10 @@ public class FeedbackActivity extends Activity
 
 
       } //if (Constants.NativeMessage.NOTIFY_CHARGGING_STATE.equals(action)) //电池充电状态变化。
-            else if (Constants.NativeMessage.SHOW_REPORT_FINISHED_DIALOG.equals(action)) //查询应用程序版本号。
-            {
-                showRepairFinishedDialog(); //查询应用程序版本号。
-            } //if (Constants.NativeMessage.NOTIFY_CHARGGING_STATE.equals(action)) //电池充电状态变化。
-            else if (Constants.NativeMessage.HIDE_CHECK_ROOT_ACCESS_GROUP_BOX.equals(action)) //隐藏检测ROOT权限的分组框。
-            {
-                hideCheckRootAccessGroupBox(); //隐藏检测ROOT权限的分组框。
-
-            } //if (Constants.NativeMessage.NOTIFY_CHARGGING_STATE.equals(action)) //电池充电状态变化。
+      else if (Constants.NativeMessage.HIDE_CHECK_ROOT_ACCESS_GROUP_BOX.equals(action)) //隐藏检测ROOT权限的分组框。
+      {
+        hideCheckRootAccessGroupBox(); //隐藏检测ROOT权限的分组框。
+      } //if (Constants.NativeMessage.NOTIFY_CHARGGING_STATE.equals(action)) //电池充电状态变化。
 		} //public void onReceive(Context context, Intent intent)
 	}; //private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver()
 
@@ -604,19 +503,19 @@ public class FeedbackActivity extends Activity
      * 发送反馈内容。
      * @param subject 主题。
      */
-    public void composeEmail(File logZipFile,DiagnoseInformation diagnoseInformation,  String subject,String emailAddress)
+    public void composeEmail(DiagnoseInformation diagnoseInformation,  String subject,String emailAddress)
     {
-        FeedbackRequestSendTask translateRequestSendTask =new FeedbackRequestSendTask(this); //创建异步任务。
+      FeedbackRequestSendTask translateRequestSendTask =new FeedbackRequestSendTask(this); //创建异步任务。
 
-        translateRequestSendTask.execute(subject,logZipFile,diagnoseInformation,emailAddress); //执行任务。
+      translateRequestSendTask.execute(subject, diagnoseInformation,emailAddress); //执行任务。
     } //public void composeEmail(String[] addresses, String subject,String emailBody, Uri attachment)
 
     /**
      * 发送反馈内容。
      */
-    private void androidSendHelpTranslateEmail(File logZipFile,DiagnoseInformation diagnoseInformation,String feedBackFromUser,String emailAddress)
+    private void androidSendHelpTranslateEmail(DiagnoseInformation diagnoseInformation,String feedBackFromUser,String emailAddress)
     {
-        composeEmail(logZipFile,diagnoseInformation,feedBackFromUser,emailAddress); //构造消息发送。
+      composeEmail(diagnoseInformation,feedBackFromUser,emailAddress); //构造消息发送。
     } //private void setLabelText(String statusText,String statusTextQtName)
 
     /**
@@ -650,9 +549,9 @@ public class FeedbackActivity extends Activity
             rawLaunchIntent(intent);
         } catch (ActivityNotFoundException ignored) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.app_name);
-            builder.setMessage(R.string.msg_intent_failed);
-            builder.setPositiveButton(R.string.button_ok, null);
+            builder.setTitle(R2.string.app_name);
+            builder.setMessage(R2.string.msg_intent_failed);
+            builder.setPositiveButton(R2.string.button_ok, null);
             builder.show();
         }
     }

@@ -1,5 +1,10 @@
 package com.stupidbeauty.feedback;
 
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import com.stupidbeauty.feedback.activity.FeedbackActivity;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
@@ -192,6 +197,10 @@ public class Feedback
   public Feedback(Context context, String emailAddress)
   {
     this.context = context;
+    
+    FeedbackDataStore feedbackDataStore = FeedbackDataStore.sharedInstance(); // Get the feedback data store.
+    
+    feedbackDataStore.setDeveloperEmail(emailAddress); // Remember devloepr email address.
   } // public UpgradeManager(Context context) 
 
   /**

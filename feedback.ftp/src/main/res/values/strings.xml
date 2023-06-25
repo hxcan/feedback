@@ -74,4 +74,57 @@
     <string name="builtinShortcuts">Builtin shortcuts</string>
     <string name="sayToMeAppName">Say to me:\"%1$s\"</string>
     <string name="appNamePrompt">Messages</string>
+    <string name="translateHelpSendFailed">The request of translation was not sent successfully, please try it again.</string>
+    <string name="applicationRunningLog">Application running log</string>
+    <string name="diagnoticInformationAboutFilesystem">Diagnose information about the file system</string>
+    <string name="feedbackContentList">Feedback information list</string>
+    <string name="feedbackFromUser">Feedback text from the user</string>
+    <string name="weVeGotRootAccess">We\'ve got root access.</string>
+    <string name="weDontHaveRootAccess">We don\'t have root access.</string>
+    <string name="youAreFacingTheProblem">You are facing the problem.</string>
+    <string name="pressTheButtonBelowToRepairThisProblem">Press the button below to repair this problem.</string>
+    <string name="congratulationsYouDontHaveThisProblem">Congratulations. You don\'t have this problem.</string>
+    <string name="app_name" translatable="false">OptimizeRepair</string>
+
+
+    <string name="helpTranslateSubject">I would like you to translate OptimizeRepair into MYMOTHERTONE</string>
+    <string name="myLanguageIs">My language is:</string>
+    <string name="feedbackSendFailed">Failed to send the feedback, please retry.</string>
+    <string name="feedbackSendSucceeded">Feedback sent successfully.</string>
+    <string name="feedbackconfirmDaypass">Feedback</string>
+    <string name="feedbackframeworkStartVsim">This application did not work? You have other suggestions? Please press the following button to send feedback.</string>
+    <string name="pleaseInputFeedbackTextHere">Please input anything you want to say here:</string>
+    <string name="stopVirtualSim">Reboot</string>
+    <string name="weAreReady">Repair</string>
+    <string name="frameworkStopVsim">Rate</string>
+    <string name="ok">OK</string>
+    <string name="pleaseDoNotToggleSwitches">Checking for root access...</string>
+    <string name="pleaseTranslaterootAccess">Please translate</string>
+    <string name="problemRepaired">Problem is repaired</string>
+    <string name="forgetRejectedRootAccessForOptimizeRepair">Forget Rejected Root Access</string>
+    <string name="needToForgetRejectedRootAccessLong">Root access managers usually remember your operations, so if you had rejected the root access request of OptimizeRepair at the beginning, then OptimizeRepair would be not able to request for root access any more. To fix that, you have to launch the root access manager and make it forget the rejection about OptimizeRepair. We can try to detect the root access manager and launch it for you, or you can launch the root access manager manually. And then, you have to make the root access manager forget OptimizeRepair.</string>
+    <string name="frameworkStartVsim">Is there any friends facing the same problem? Please share this application to people who need it.</string>
+    <string name="startVirtualSim">Detect problem</string>
+    <string name="problemDetailsExplain">Details</string>
+
+    <string name="tick">Tick</string>
+
+    <string name="getProVersion">Get professional version</string>
+    <string name="retryRootAccess">Retry</string>
+    <string name="helpFix">Fix it</string>
+    <string name="helpFixText">If you have rejected the root access request at the beginning, then you may need to make the root access manager forget OptimizeRepair in order to check root access again.</string>
+    <string name="problemShortExplain">This application will solve the problem \"Android is upgrading, Optimizing application 10 of 43\"</string>
+    <string name="clearOsiLog">Repair problem</string>
+    <string name="confirmDaypass">Share</string>
+    <string name="dontWaitSystemPrepare">Press the button below to reboot your device and verify the repairation. Notice that, you would not be asked to confirm the reboot.</string>
+    <string name="restore">Restore</string>
+    <string name="restoreToStatusBeforeRepairation">Restore the system to the status before repairation. If this app did not work as expected, you can click the button below to restore the system.</string>
+    <string name="retryConnect">If your would like us to translate this application into your mothertone, please contact us.</string>
+    <string name="alreadyHaveSuperNetwork">Is your problem solved by this application? Please rate it.</string>
+    <string name="sendFeedbackNow">Send feedback now</string>
+    <string name="textFeedback">Text feedback</string>
+    <string name="typeAnythingYouWantToSay">Type anything you want to say</string>
+
+    <string name="enterEmailAddressHere">Enter your email address here if you 
+want us to reply:</string>
 </resources>
