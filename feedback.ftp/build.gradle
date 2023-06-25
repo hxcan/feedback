@@ -47,10 +47,10 @@ dependencies
   implementation 'com.github.hxcan:upgrademanager:2023.5.8'
   implementation 'androidx.multidex:multidex:2.0.1'
 
-  implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') 
-  {
-    exclude module: 'support-v4'
-  }
+//   implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') 
+//   {
+//     exclude module: 'support-v4'
+//   }
 }
 
 // # https://stackoverflow.com/questions/65380359/lomboks-access-to-jdk-compilers-internal-packages-incompatible-with-java-16
