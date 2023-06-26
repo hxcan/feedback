@@ -22,10 +22,10 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.Constants;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.FeedbackRequestSendTask;
 import com.stupidbeauty.feedback.R2;
+import com.stupidbeauty.feedback.R;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.DiagnoseInformation;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LanImeBaseDef;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LogHelper;
@@ -250,7 +250,7 @@ public class FeedbackActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 
-    setContentView(R2.layout.activity_feedback); //显示界面。
+    setContentView(R.layout.activity_feedback); //显示界面。
 
     ButterKnife.bind(this); //注入视图。
 
