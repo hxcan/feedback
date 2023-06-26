@@ -5,9 +5,9 @@ package com.stupidbeauty.feedback;
   */
 public  class FeedbackMessage 
 {
-  private java.lang.Object model_ = "";
-  private java.lang.Object osversion_ = "";
-  private java.lang.Object manufacturer_ = "";
+  private String model_ = ""; //!< The model name of the phone.
+  private String osversion_ = ""; //!< The os versxion.
+  private String manufacturer_ = ""; //!< The manufacturer string.
   private String developerEmail=""; //!< The developer email.
   private String packageName=""; //!< package name.
   
@@ -34,7 +34,7 @@ public  class FeedbackMessage
   public FeedbackMessage() 
   {
     feedbacktext_ = "";
-    logzipfile_ = com.google.protobuf.ByteString.EMPTY;
+
     emailAddress_ = "";
   }
 
@@ -125,7 +125,7 @@ public  class FeedbackMessage
 
   private int bitField0_;
   public static final int FEEDBACKTEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object feedbacktext_;
+  private String feedbacktext_; //!< the feedback text content.
   /**
     * <pre>
     *反馈文字内容。
@@ -145,19 +145,9 @@ public  class FeedbackMessage
        *
        * <code>optional string model = 12;</code>
        */
-      public java.lang.String getModel() {
-        java.lang.Object ref = model_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            model_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public java.lang.String getModel() 
+      {
+        return model_;
       }
 
       /**
@@ -167,19 +157,9 @@ public  class FeedbackMessage
        *
        * <code>optional string manufacturer = 11;</code>
        */
-      public java.lang.String getManufacturer() {
-        java.lang.Object ref = manufacturer_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            manufacturer_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public java.lang.String getManufacturer() 
+      {
+        return manufacturer_;
       }
 
   /**
@@ -189,19 +169,9 @@ public  class FeedbackMessage
        *
        * <code>required string osversion = 1;</code>
        */
-      public java.lang.String getOsversion() {
-        java.lang.Object ref = osversion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            osversion_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public java.lang.String getOsversion() 
+      {
+        return osversion_;
       }
 
   /**
@@ -213,46 +183,11 @@ public  class FeedbackMessage
   */
   public java.lang.String getFeedbacktext() 
   {
-    java.lang.Object ref = feedbacktext_;
-    if (ref instanceof java.lang.String) 
-    {
-      return (java.lang.String) ref;
-    }
-    else 
-    {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) 
-      {
-        feedbacktext_ = s;
-      }
-      return s;
-    }
-  }
-  /**
-    * <pre>
-    *反馈文字内容。
-    * </pre>
-    *
-    * <code>optional string feedbacktext = 1;</code>
-    */
-  public com.google.protobuf.ByteString getFeedbacktextBytes() 
-  {
-    java.lang.Object ref = feedbacktext_;
-    if (ref instanceof java.lang.String) 
-    {
-      com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8( (java.lang.String) ref);
-      feedbacktext_ = b;
-      return b;
-    }
-    else 
-    {
-      return (com.google.protobuf.ByteString) ref;
-    }
+    return feedbacktext_;
   }
 
     public static final int LOGZIPFILE_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString logzipfile_;
+
     /**
      * <pre>
      *压缩的日志文件。
@@ -263,19 +198,9 @@ public  class FeedbackMessage
     public boolean hasLogzipfile() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <pre>
-     *压缩的日志文件。
-     * </pre>
-     *
-     * <code>optional bytes logzipfile = 2;</code>
-     */
-    public com.google.protobuf.ByteString getLogzipfile() {
-      return logzipfile_;
-    }
 
     public static final int DIAGNOSEINFORMATION_FIELD_NUMBER = 3;
-    private com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformationProtos.DiagnoseInformation diagnoseinformation_;
+
     /**
      * <pre>
      *诊断信息。
@@ -286,29 +211,9 @@ public  class FeedbackMessage
     public boolean hasDiagnoseinformation() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    /**
-     * <pre>
-     *诊断信息。
-     * </pre>
-     *
-     * <code>optional .com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformation diagnoseinformation = 3;</code>
-     */
-    public com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformationProtos.DiagnoseInformation getDiagnoseinformation() {
-      return diagnoseinformation_ == null ? com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformationProtos.DiagnoseInformation.getDefaultInstance() : diagnoseinformation_;
-    }
-    /**
-     * <pre>
-     *诊断信息。
-     * </pre>
-     *
-     * <code>optional .com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformation diagnoseinformation = 3;</code>
-     */
-    public com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformationProtos.DiagnoseInformationOrBuilder getDiagnoseinformationOrBuilder() {
-      return diagnoseinformation_ == null ? com.stupidbeauty.comgooglewidevinesoftwaredrmremover.DiagnoseInformationProtos.DiagnoseInformation.getDefaultInstance() : diagnoseinformation_;
-    }
 
     public static final int EMAILADDRESS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object emailAddress_;
+    private String emailAddress_; //!< email address of the user.
     /**
      * <pre>
      *用户的邮件地址。
@@ -326,56 +231,12 @@ public  class FeedbackMessage
      *
      * <code>optional string emailAddress = 4;</code>
      */
-    public java.lang.String getEmailAddress() {
-      java.lang.Object ref = emailAddress_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          emailAddress_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *用户的邮件地址。
-     * </pre>
-     *
-     * <code>optional string emailAddress = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getEmailAddressBytes() {
-      java.lang.Object ref = emailAddress_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        emailAddress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
+    public java.lang.String getEmailAddress() 
+    {
+      return emailAddress_;
+    } // public java.lang.String getEmailAddress() 
 
     private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (hasDiagnoseinformation()) {
-        if (!getDiagnoseinformation().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
 
     private static final long serialVersionUID = 0L;
   }

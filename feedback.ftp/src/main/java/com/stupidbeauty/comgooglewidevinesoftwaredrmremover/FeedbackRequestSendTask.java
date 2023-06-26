@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import com.google.protobuf.ByteString;
+// import com.google.protobuf.ByteString;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -146,49 +146,6 @@ public final class FeedbackRequestSendTask extends AsyncTask<Object, Void, Boole
     
     return array; 
   } // private byte[] constructFeedbackMessageCbor(String emailAddress, String subject)
-  
-  /**
-  * Construct feedback message with protobuf.
-  */
-  private byte[] constructFeedbackMessageProtobuf(String emailAddress, String subject)
-  {
-    byte[] array=null; //序列化成字节数组。
-
-    {
-      // byte[] attachmentImageBytes=FileUtils.readFileToByteArray(body); //将日志压缩文件整个读入。
-
-      // ByteString attachment=ByteString.copyFrom(attachmentImageBytes); //构造字节字符串。
-
-      FeedbackMessageProtos.FeedbackMessage.Builder translateRequestBuilder = FeedbackMessageProtos.FeedbackMessage.newBuilder();
-
-      translateRequestBuilder.setFeedbacktext(subject); //设置反馈文字内容。
-
-      // translateRequestBuilder.setLogzipfile(attachment); //设置日志压缩文件内容。
-
-      translateRequestBuilder.getDiagnoseinformationBuilder().setOsversion(Build.VERSION.RELEASE);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setBoard(Build.BOARD);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setBootloader(Build.BOOTLOADER);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setBrand(Build.BRAND);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setDevice(Build.DEVICE);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setDisplay(Build.DISPLAY);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setFingerprint(Build.FINGERPRINT);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setHardware(Build.HARDWARE);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setHost(Build.HOST);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setId(Build.ID);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setManufacturer(Build.MANUFACTURER);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setModel(Build.MODEL);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setProduct(Build.PRODUCT);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setSerial(Build.SERIAL);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setType(Build.TYPE);
-      translateRequestBuilder.getDiagnoseinformationBuilder().setUser(Build.USER);
-
-      translateRequestBuilder.setEmailAddress(emailAddress); //设置邮件地址。
-
-      array=translateRequestBuilder.build().toByteArray(); //序列化成字节数组。
-    }
-    
-    return array;
-  } // private byte[] constructFeedbackMessageProtobuf()
   
   private void sendAmqpRequest(byte[] array) // Send amqp request.
   {
