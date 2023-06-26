@@ -1,5 +1,10 @@
 package com.stupidbeauty.comgooglewidevinesoftwaredrmremover;
 
+import com.stupidbeauty.codeposition.CodePosition;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.BufferedReader;
+import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
@@ -53,39 +58,49 @@ public final class FeedbackRequestSendTask extends AsyncTask<Object, Void, Boole
   @Override
   protected Boolean doInBackground(Object... params)
   {
+    // Log.d(TAG,"doInBackground,published translate request"); //Debug.
+    Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
     //参数顺序：
     //            subject, diagnozeInformation,emailAddress.
 
     Boolean result=false; //结果，是否成功。
+    Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
 
     //使用protobuf将各个字段序列化成字节数组，然后使用rabbitmq发送到服务器。
 
     String subject=(String)(params[0]); //获取主题。
+    Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
 
     // File body=(File)(params[1]); //获取日志压缩文件。
 
     DiagnoseInformation attachmentBitmap=(DiagnoseInformation)(params[1]); //获取诊断信息。
+    Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
 
     String emailAddress=(String)(params[2]); //获取用户的邮件地址。
 
     try //尝试构造请求对象，并且捕获可能的异常。
     {
+      Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
       // byte[] array=constructFeedbackMessageProtobuf(emailAddress, subject); // Construct feedback message with protobuf.
       byte[] array=constructFeedbackMessageCbor(emailAddress, subject); // Construct feedback message with cbor.
       
       sendAmqpRequest(array); // Send amqp request.
+      Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
 
       result=true; //成功。
     } //try //尝试构造请求对象，并且捕获可能的异常。
     catch (Exception e)
     {
+      Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
       e.printStackTrace();
     }
     catch (OutOfMemoryError error) //内存不足。
     {
+      Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
       error.printStackTrace(); //报告错误。
     } //catch (OutOfMemoryError error) //内存不足。
 
+    Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
     return result;
   }
   
@@ -222,6 +237,7 @@ public final class FeedbackRequestSendTask extends AsyncTask<Object, Void, Boole
   @Override
   protected void onPostExecute(Boolean result)
   {
+    Log.d(TAG, CodePosition.newInstance().toString()); // Debug.    
     simpleActivity.reportHelpTranslateRequestSendResult(result); //报告结果，翻译请求的发送结果。
   } //protected void onPostExecute(Boolean result)
 }

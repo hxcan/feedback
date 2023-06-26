@@ -85,8 +85,6 @@
     <string name="pressTheButtonBelowToRepairThisProblem">Press the button below to repair this problem.</string>
     <string name="congratulationsYouDontHaveThisProblem">Congratulations. You don\'t have this problem.</string>
     <string name="app_name" translatable="false">OptimizeRepair</string>
-
-
     <string name="helpTranslateSubject">I would like you to translate OptimizeRepair into MYMOTHERTONE</string>
     <string name="myLanguageIs">My language is:</string>
     <string name="feedbackSendFailed">Failed to send the feedback, please retry.</string>

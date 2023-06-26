@@ -199,19 +199,16 @@ public class FeedbackActivity extends Activity
      */
     public void reportHelpTranslateRequestSendResult(Boolean result)
     {
-        sendFeedbackuirepairprogressBar.setVisibility(View.INVISIBLE); //隐藏进度条。
+      sendFeedbackuirepairprogressBar.setVisibility(View.INVISIBLE); //隐藏进度条。
 
-        if (result) //成功。
-        {
-            Toast.makeText(FeedbackActivity.this, R2.string.feedbackSendSucceeded, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
-        } //if (result) //成功。
-        else //失败。
-        {
-            Toast.makeText(FeedbackActivity.this, R2.string.feedbackSendFailed, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
-        } //else //失败。
-
-        
-        return;
+      if (result) //成功。
+      {
+        Toast.makeText(FeedbackActivity.this, R.string.feedbackSendSucceeded, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
+      } //if (result) //成功。
+      else //失败。
+      {
+        Toast.makeText(FeedbackActivity.this, R.string.feedbackSendFailed, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
+      } //else //失败。
     } //public void reportHelpTranslateRequestSendResult(Boolean result)
 
 
@@ -250,7 +247,7 @@ public class FeedbackActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.activity_feedback); //显示界面。
+  setContentView(R.layout.activity_feedback); //显示界面。
 
     ButterKnife.bind(this); //注入视图。
 
