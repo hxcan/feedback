@@ -125,6 +125,5 @@
     <string name="textFeedback">Text feedback</string>
     <string name="typeAnythingYouWantToSay">Type anything you want to say</string>
 
-    <string name="enterEmailAddressHere">Enter your email address here if you 
-want us to reply:</string>
+    <string name="enterEmailAddressHere">Enter your email address here if you want us to reply:</string>
 </resources>

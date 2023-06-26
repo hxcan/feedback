@@ -49,40 +49,34 @@
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/virtualSimprogressBar1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-
-
-                    android:visibility="visible"
-                    android:layout_below="@id/donotToggleSwitchesTextView1"
-                    android:text="@string/applicationRunningLog"
-                    android:layout_marginTop="6dp"
-                    android:textColor="@color/black"
-                    android:layout_centerHorizontal="true" />
-
+                  android:id="@+id/virtualSimprogressBar1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:visibility="invisible"
+                  android:layout_below="@id/donotToggleSwitchesTextView1"
+                  android:text="@string/applicationRunningLog"
+                  android:layout_marginTop="6dp"
+                  android:textColor="@color/black"
+                  android:layout_centerHorizontal="true" />
                 <TextView
-                    android:id="@+id/startVirtualSimButton1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_below="@id/virtualSimprogressBar1"
-                    android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/startVirtualSim"
-                    android:text="@string/diagnoticInformationAboutFilesystem"
-                    android:visibility="visible"
-                    android:indeterminate="true"
-                    android:enabled="true"
-                    android:textColor="@color/black" />
-
+                  android:id="@+id/startVirtualSimButton1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/virtualSimprogressBar1"
+                  android:layout_centerHorizontal="true"
+                  android:contentDescription="@string/startVirtualSim"
+                  android:text="@string/diagnoticInformationAboutFilesystem"
+                  android:visibility="invisible"
+                  android:indeterminate="true"
+                  android:enabled="true"
+                  android:textColor="@color/black" />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/feedbackFromUser"
-                    android:layout_below="@+id/startVirtualSimButton1"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/black" />
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/feedbackFromUser"
+                  android:layout_below="@+id/startVirtualSimButton1"
+                  android:layout_centerHorizontal="true"
+                  android:textColor="@color/black" />
             </RelativeLayout>
 
             <RelativeLayout
