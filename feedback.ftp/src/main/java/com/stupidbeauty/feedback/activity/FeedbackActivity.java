@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-// import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +31,6 @@ import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LogHelper;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.OrApplicationLog;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.ZipInterruptedException;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.ZipUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -204,14 +202,16 @@ public class FeedbackActivity extends Activity
       if (result) //成功。
       {
         Toast.makeText(FeedbackActivity.this, R.string.feedbackSendSucceeded, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
+        
+        finish(); // close activity.
       } //if (result) //成功。
       else //失败。
       {
         Toast.makeText(FeedbackActivity.this, R.string.feedbackSendFailed, Toast.LENGTH_LONG).show(); //显示吐息，告知发送结果。
+        
+        sendFeedbackprogressValuetextView1.setVisibility(View.VISIBLE); // Show the button again.
       } //else //失败。
     } //public void reportHelpTranslateRequestSendResult(Boolean result)
-
-
 
   @BindView(R2.id.rootAccessGroupBox) RelativeLayout rootAccessGroupBox; //!<检测ROOT权限的分组框。
   private static String OptimizeRepairGooglePlayUrl="https://play.google.com/store/apps/details?id=com.stupidbeauty.comgooglewidevinesoftwaredrmremover"; //!<优化修复应用程序的google play地址。

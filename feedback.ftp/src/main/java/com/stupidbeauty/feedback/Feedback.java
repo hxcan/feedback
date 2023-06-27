@@ -125,29 +125,6 @@ public class Feedback
   private HashMap<String, String> packageNameVersionNameMap; //!< 包名与可用版本号之间的映射关系。
   
 	/**
-	 * 获取版本名字。
-	 * @param packageName 包名。陈欣
-	 * @return 这个软件包现在的版本名字。
-	 */
-	public String getVersionName(String packageName)
-	{
-    String versionName=null;
-    try
-    {
-      PackageManager packageManager=context.getPackageManager(); //获取软件包管理器。
-      PackageInfo packageInfo=packageManager.getPackageInfo(packageName,0); //获取对应的软件包信息。
-
-      versionName= packageInfo.versionName; // 获取版本号名字。
-    }
-    catch (PackageManager.NameNotFoundException e) //未找到该软件包。
-    {
-      e.printStackTrace(); //报告错误。
-    } //catch (PackageManager.NameNotFoundException e) //未找到该软件包。
-
-    return versionName;
-	} //public String getVersionName(String packageName)
-	
-	/**
 	 *  // 获取可用的版本名字。
 	 * @param packageName
 	 * @return

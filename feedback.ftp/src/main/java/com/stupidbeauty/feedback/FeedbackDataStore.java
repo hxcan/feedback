@@ -1,12 +1,10 @@
 package com.stupidbeauty.feedback;
 
 import android.util.Log;
-import com.stupidbeauty.hxlauncher.bean.ApplicationListData;
+// import com.stupidbeauty.hxlauncher.bean.ApplicationListData;
 import androidx.multidex.MultiDex;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
-// import com.stupidbeauty.hxlauncher.asynctask.LoadVoicePackageUrlMapTask;
-// import com.stupidbeauty.blindbox.asynctask.StorageCleanerTask;
 import org.apache.commons.io.FileUtils;
 import com.stupidbeauty.upgrademanager.UpgradeManager;
 import com.stupidbeauty.upgrademanager.listener.PackageNameUrlMapDataListener;
@@ -38,7 +36,7 @@ public class FeedbackDataStore
   private HashMap<String, String> apkFilePathMap=null; //!< 包名与安装包文件路径之间的映片。陈欣
 	private HashMap<String, Integer> packageItemLaunchCoolDownMap=null; //!<映射。包条目信息字符串与实际冷却时间秒数之间的映射。
 	private HashMap<String, String> packageItemAliasMap=null; //!<映射。包条目信息字符串与别名之间的映射。
-	private ApplicationListData applicationListData; //!<应用程序列表数据。
+
 	private static final String TAG="FeedbackDataStore"; //!< The tag used for debug code.
 	private HashMap<String, String> packageNameVersionNameMap; //!< 包名与可用版本号之间的映射关系。
   private String promotionPackage="com.bankcomm.embs"; //!< The promotion package.
@@ -103,28 +101,6 @@ public class FeedbackDataStore
 //     Log.d(TAG, "setPackageNameExtraPackageNamesMap, dance ball result in final map: " + this.packageNameExtraPackageNamesMap.get("com.lew.game.danceball.lenovo"));
   } // public void setPackageNameExtraPackageNamesMap(HashMap<String, List<String> > packageNameExtraPackageNamesMap)
   
-	/**
-	* set 包名与可用版本号之间的映射关系。
-	*/
-	public void setPackageNameVersionNameMap (HashMap<String, String> packageNameVersionNameMap) 
-	{
-		if (this.packageNameVersionNameMap==null)
-		{
-			this.packageNameVersionNameMap=packageNameVersionNameMap;
-		}
-		else
-		{
-      if (packageNameVersionNameMap!=null) // The source map exists
-      {
-        this.packageNameVersionNameMap.putAll(packageNameVersionNameMap);
-      } // if (packageNameVersionNameMap!=null) // The source map exists
-		}
-      
-		applicationListData.notifyApplicationList(); // Notify version change.
-
-    // Log.d(TAG, "setPackageNameVersionNameMap, " +  promotionPackage +  ": "+ this.packageNameVersionNameMap.get(promotionPackage) + ", this: " + this); //Debug.
-	} //public void setPackageNameVersionNameMap (HashMap<String, String> packageNameVersionNameMap)
-
 	/**
 	* 设置包名与信息页面地址之间的映射。
 	*/
