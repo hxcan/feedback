@@ -17,7 +17,7 @@
   <string name="enable">启用</string>
   <string name="statusNormal">状态正常</string>
   <string name="password">密码</string>
-  <string name="goAndEnableLocationService">去启用</string>
+  <string name="sayYourOpinionled">说说你的看法</string>
   <string name="startDownload">开始下载</string>
   <string name="feedbackContentList">反馈内容清单</string>
   <string name="applicationRunningLog">应用程序运行日志</string>
@@ -29,25 +29,10 @@
   <string name="pleaseTranslaterootAccess">请翻译</string>
   <string name="problemRepaired">问题已修复</string>
   <string name="problemShouldHaveBeenRepaired">你所面临的问题应当已经被修复了。</string>
-
-
   <string name="sendFeedbackNow">立即发送反馈</string>
   <string name="typeAnythingYouWantToSay">填入你想说的任意文字</string>
-
-
-
-
-
-
-
-
-
-
-
-    <string name="enterEmailAddressHere">如果你希望我们回复，请输入邮箱地址：</string>
-
-
-
-
-
+  <string name="enterEmailAddressHere">如果你希望我们回复，请输入邮箱地址：</string>
+  <string name="feedbackSendSucceeded">反馈内容已成功发送。</string>
+  <string name="feedbackSendFailed">反馈内容发送失败，请重试。</string>
+  <string name="email">电子邮箱</string>
 </resources>
