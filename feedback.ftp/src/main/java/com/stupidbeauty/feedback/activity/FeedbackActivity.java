@@ -30,7 +30,7 @@ import com.stupidbeauty.feedback.R2;
 import com.stupidbeauty.feedback.R;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.DiagnoseInformation;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LanImeBaseDef;
-import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LogHelper;
+// import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.LogHelper;
 import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.OrApplicationLog;
 // import com.stupidbeauty.comgooglewidevinesoftwaredrmremover.app.ZipUtils;
 import java.io.File;

@@ -1,8 +1,7 @@
 package com.stupidbeauty.feedback;
 
 import android.util.Log;
-// import com.stupidbeauty.hxlauncher.bean.ApplicationListData;
-import androidx.multidex.MultiDex;
+// import androidx.multidex.MultiDex;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
 import org.apache.commons.io.FileUtils;
