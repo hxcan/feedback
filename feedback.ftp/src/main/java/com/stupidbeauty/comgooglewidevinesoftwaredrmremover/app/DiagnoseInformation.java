@@ -20,7 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ProgressBar;
+// import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +46,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class DiagnoseInformation
 {
-    @BindView(R2.id.sendFeedbackuirepairprogressBar) ProgressBar sendFeedbackuirepairprogressBar; //!<发送反馈信息过程的进度条。
+    // @BindView(R2.id.sendFeedbackuirepairprogressBar) ProgressBar sendFeedbackuirepairprogressBar; //!<发送反馈信息过程的进度条。
     @BindView(R2.id.sendFeedbackprogressValuetextView1) Button sendFeedbackprogressValuetextView1; //!<发送反馈信息的按钮。
 
     @BindView(R2.id.rootAccessGroupBox) RelativeLayout rootAccessGroupBox; //!<检测ROOT权限的分组框。
@@ -56,7 +56,6 @@ public class DiagnoseInformation
     @BindView(R2.id.uifacingProblemlabel) TextView uifacingProblemlabel; //!<妳正面临着这个问题。
 
     private static final String TAG="OptimizeRepairSimpleAct"; //!<输出调试信息时使用的标记。
-
 
     @BindView(R2.id.uirepairProblemgroupBox_3) View uirepairProblemgroupBox_3; //!<修复分组框。
 
@@ -96,13 +95,11 @@ public class DiagnoseInformation
         uifacingProblemlabel.setText(R2.string.youAreFacingTheProblem); //妳正面临着此问题。
 
 
-
         uirepairProblemgroupBox_3.setEnabled (true); //启用修复分组框。
     } //if (systemframeworkcomgooglewidevinesoftwaredrmjar.exists ()) //此文件存在。
     else //此文件不存在。
     {
         uifacingProblemlabel.setText (R2.string.congratulationsYouDontHaveThisProblem); //妳未面临此问题。
-
 
         uirepairProblemgroupBox_3.setEnabled (false); //禁用修复分组框。
 
