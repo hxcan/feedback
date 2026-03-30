@@ -13,11 +13,11 @@ android
     multiDexEnabled true
   }
 
-  buildTypes 
+  implementation 'com.github.hxcan:victoriafresh.android:2026.3.8'
   {
-    release 
+  implementation 'com.github.hxcan:voiceui:2024.6.6'
     {
-      minifyEnabled false
+  implementation 'com.github.hxcan:upgrademanager:2025.8.1'
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
     }
   }
